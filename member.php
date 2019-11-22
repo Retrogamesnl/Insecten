@@ -9,7 +9,7 @@ function displayMembers() {
                 echo '<li>';
                 echo '<img src="./img/icon/' . $row['imgNum'] . '.png" class="w3-bar-item w3-circle" style="width:85px">';
                 echo '<div class="w3-bar-item">';
-                echo '<span class="w3-large"> ' . $row['firstName'] . ' ' . $row['lastName'] . '</span><br>';
+                echo '<span class="w3-large"> ' . htmlspecialchars($row['firstName']) . ' ' . htmlspecialchars($row['lastName']) . '</span><br>';
                 echo '<span>' . $row['joinDate'] . '</span>';
                 echo '</div>';
                 echo '</li>';

@@ -6,6 +6,8 @@ $last =  $_POST['lastName'];
 $date = date('Y-m-d');
 $img =  rand(0,19);
 
+setcookie("member", $first . $last);
+
 $query = "INSERT INTO members(firstName, lastName, joinDate, imgNum) VALUES (?, ?, '$date', '$img')";
 $stmt = mysqli_stmt_init($conn);
 
@@ -16,9 +18,9 @@ if ($first && $first){
         header('Location: ./member.php');
     } else{
         console.log('SQL statement failed');
-        header('Location: .');
+        header('Location: ./index.php');
     }
 } else {
     console.log('A field was not filled in');
-    header('Location: .');
+    header('Location: ./index.php');
 }
